@@ -7,18 +7,20 @@
 	import { fetchCountriesAction } from "../../api/countries.actions";
 	import { onMount } from "svelte";
 
-    let value = '';
+    let searchTerm = '';
     let selectedValue = '';
 
     let options = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
 
     let countries = [];
+    let initialData = [];
 
     const handleEditEmployee  = useMutation((variables) => fetchCountriesAction(variables),
         {
-        onSuccess: (response) => {
-            countries = response;
-        },    
+            onSuccess: (response) => {
+                countries = response;
+                initialData = response;
+            },    
         }
     );
 
@@ -27,6 +29,14 @@
 
         $handleEditEmployee.mutate("region/" + selectedValue.toLowerCase());
         
+    }
+
+    const handleSearch = () => {
+        if(searchTerm !== ""){
+            countries = countries?.filter(item => item.name?.common?.toLowerCase().includes(searchTerm.toLowerCase())); 
+        } else {
+            countries = initialData;
+        } 
     }
 
     onMount(async () => {
@@ -42,10 +52,11 @@
                 <img src={search_icon} alt="search_icon">
                 <div class="relative ml-[1.63rem] flex-grow">
                     <input
-                    type="text"
-                    class="w-full outline-none"
-                    bind:value={value}
-                    placeholder="Search for a country…"
+                        type="text"
+                        class="w-full outline-none"
+                        bind:value={searchTerm}
+                        placeholder="Search for a country…"
+                        on:input={handleSearch}
                     />
                 </div>
             </div>
