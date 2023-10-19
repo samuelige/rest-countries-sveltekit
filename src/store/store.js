@@ -1,3 +1,3 @@
 import { writable } from "svelte/store";
 
-export const darMode = writable(false);
+export const isDarkMode = writable(false);

@@ -1,6 +1,7 @@
 <script>
     import { MutationCache, QueryCache, QueryClient, QueryClientProvider } from '@sveltestack/svelte-query';
     import { toasts, ToastContainer, FlatToast, BootstrapToast }  from "svelte-toasts";
+	import Header from './Header.svelte';
 
     const mutationCache = new MutationCache({
         onError: (error, _variables, _context, mutation) => {
@@ -45,7 +46,7 @@
         <FlatToast {data} /> Provider template for your toasts
         <slot />
       </ToastContainer> -->
-
+      <Header/>
       <slot />
     
 </QueryClientProvider>

@@ -1,8 +1,12 @@
 /** @type {import('tailwindcss').Config}*/
 const theme = require("./theme");
-const {fontFamily, colors, backgroundColor, backgroundImage} = theme;
+
+const darMode = require("./src/store/store");
+console.log(darMode)
+const {fontFamily, colors, backgroundColor, backgroundImage, boxShadow} = theme;
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
+	darkMode: 'class',
 
 	theme: {
 		extend: {
@@ -10,6 +14,7 @@ const config = {
 			colors,
 			backgroundColor,
 			backgroundImage,
+			boxShadow,
 			screens: {
 			  'xl-1': '1281px',
 			}

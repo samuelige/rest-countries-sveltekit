@@ -1,5 +1,5 @@
 <script>
-	import '../styles/globals.postcss'
+	import '../styles/globals.css'
 	import Layoutwrapper from '../container/Layoutwrapper.svelte';
 </script>
 

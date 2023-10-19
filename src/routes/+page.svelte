@@ -4,8 +4,9 @@
 	import { fetchCountriesAction } from "../api/countries.actions";
 	import axios from "axios";
 	import { onMount } from "svelte";
+	import Countries from "../container/Countries/Countries.svelte";
 
-  let countries = [];
+
 
     // const queryResult = useQuery('todos', fetchCountriesAction)
 
@@ -51,41 +52,10 @@
 
     // console.log("queryResult", $queryResult)
 
-    const handleEditEmployee  = useMutation((variables) => fetchCountriesAction(variables),
-    {
-      onSuccess: (response) => {
-        countries = response;
-        // const { data : {status} } = response;
-        
-
-        // if(status === "success"){
-        //   setSpinner(false);
-        //   toast.success(`Successfully updated `);
-
-        //   queryClient.invalidateQueries('single_employee');
-        //   queryClient.invalidateQueries('all_employee');
-        //   setOpenEditEmployee((prev) => !prev)
-        // }
-      },
-
-      // onError: (error) => {
-      //   toast.error(`Something went wrong: ${error.message}`)
-      // }
-          
-    }
-  );
-
-  // $: ({ isLoading, data, error} = $handleEditEmployee);
-
-
-  onMount(async () => {
-    $handleEditEmployee.mutate("all");
-  });
+    
 </script>
 
-
-<h1 class="text-red-700 font-extrabold">Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<Countries/>
 
 <!-- <ul>
   {#each countries as user}
@@ -93,7 +63,7 @@
   {/each}
 </ul> -->
 
-{#if $handleEditEmployee.isLoading}
+<!-- {#if $handleEditEmployee.isLoading}
   <span>Loading...</span>
 {:else}
 <div>
@@ -103,4 +73,4 @@
   {/each}
   </ul>
 </div>
-{/if}
+{/if} -->
