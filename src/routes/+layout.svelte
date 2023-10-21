@@ -6,5 +6,3 @@
 <Layoutwrapper>
 	<slot />
 </Layoutwrapper>
-
-<!-- <slot /> -->

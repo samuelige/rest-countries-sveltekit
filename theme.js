@@ -20,9 +20,11 @@ module.exports = {
         white: "hsl(0, 0%, 100%)",
     },
     boxShadow: {
+        customXS: "0 0px 4px 1px rgba(0, 0, 0, 0.10)",
         customSM: "0 2px 9px 0px rgba(0, 0, 0, 0.05)",
         customMD: "0 2px 4px 0px rgba(0, 0, 0, 0.06)",
-        customLG: "0px 0px 7px 2px rgba(0, 0, 0, 0.03)",
+        customLG: "0 0px 7px 2px rgba(0, 0, 0, 0.03)",
+        customXL: "0 0px 7px 0px rgba(0, 0, 0, 0.29)",
     },
     backgroundImage: {},
     borderColor: {},

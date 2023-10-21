@@ -34,6 +34,6 @@
 	"dependencies": {
 		"@sveltestack/svelte-query": "^1.6.0",
 		"axios": "^1.5.1",
-		"svelte-toasts": "^1.1.2"
+		"svelte-french-toast": "^1.2.0"
 	}
 }

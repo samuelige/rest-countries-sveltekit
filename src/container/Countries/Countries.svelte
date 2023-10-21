@@ -6,6 +6,7 @@
 	import CountryGrid from "./CountryGrid.svelte";
 	import { fetchCountriesAction } from "../../api/countries.actions";
 	import { onMount } from "svelte";
+	import CustomLoader from "../../_shared/components/CustomLoader.svelte";
 
     let searchTerm = '';
     let selectedValue = '';
@@ -75,7 +76,7 @@
 
         <div class="mt-[1.75rem] lg:mt-12">
             {#if $handleEditEmployee.isLoading}
-            <span>Loading...</span>
+                <CustomLoader/>
             {:else}
                 <CountryGrid data={countries}/>
             {/if}

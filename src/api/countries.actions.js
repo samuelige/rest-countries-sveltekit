@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { requestCountriesData } from "../services/requests/countries.request";
+import { requestCountriesData, requestSingleCountry } from "../services/requests/countries.request";
 
 export const fetchCountriesAction = async (queryKey) => {
 
@@ -13,7 +13,7 @@ export const fetchCountriesAction = async (queryKey) => {
 
 export const fetchSingleCountryAction = async ({ queryKey }) => {
     try {
-      const data = await requestCountriesData(queryKey[1]);
+      const data = await requestSingleCountry(queryKey[1]);
       return data;
     } catch (error) {
       throw error.response.data;
