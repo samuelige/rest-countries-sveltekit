@@ -7,6 +7,7 @@
 	import { fetchCountriesAction } from "../../api/countries.actions";
 	import { onMount } from "svelte";
 	import CustomLoader from "../../_shared/components/CustomLoader.svelte";
+	import { isDarkMode } from "../../store/store";
 
     let searchTerm = '';
     let selectedValue = '';
@@ -46,15 +47,15 @@
 
 </script>
 
-<main class="w-full px-4 lg:px-8 mt-6 dark:bg-gray-900 bg-white lg:mt-12 xl-1:px-0">
+<main  class="w-full px-4 lg:px-8 mt-6 bg-transparent lg:mt-12 xl-1:px-0">
     <div class="w-full flex flex-col xl-1:max-w-[80rem] xl-1:m-auto">
         <div class="text-sm flex flex-col md:flex-row md:justify-between md:items-center">
-            <div class=" dark:bg-gray-900 'bg-white' w-full flex flex-row items-center text-grayXS  border-0  shadow-customSM h-12 md:h-14 md:w-[30rem] rounded-[0.3125rem] pt-[0.87rem] pb-[0.88rem] px-8">
-                <img src={search_icon} alt="search_icon">
+            <div class=" dark:bg-darkBlue bg-white w-full flex flex-row items-center text-grayXS dark:text-white border-0  shadow-customSM h-12 md:h-14 md:w-[30rem] rounded-[0.3125rem] pt-[0.87rem] pb-[0.88rem] px-8">
+                <img src={search_icon} alt="search_icon" class={$isDarkMode && "whiteFilter"}>
                 <div class="relative ml-[1.63rem] flex-grow">
                     <input
                         type="text"
-                        class="w-full outline-none"
+                        class="w-full outline-none bg-transparent"
                         bind:value={searchTerm}
                         placeholder="Search for a country…"
                         on:input={handleSearch}
@@ -63,7 +64,7 @@
             </div>
     
             <select
-                class="bg-white mt-10 md:mt-0 py-[1.13rem] pl-6 pr-[1.38rem] shadow-customSM w-[12.5rem] h-12 md:h-14 rounded-[0.3125rem] text-darkBlueMD border-0 outline-none "
+                class="dark:bg-darkBlue bg-white mt-10 md:mt-0 py-[1.13rem] pl-6 pr-[1.38rem] shadow-customSM w-[12.5rem] h-12 md:h-14 rounded-[0.3125rem] text-darkBlueMD dark:text-white border-0 outline-none "
                 bind:value={selectedValue}
                 on:change={handleChange}
                 >

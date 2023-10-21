@@ -26,9 +26,12 @@
 </script>
 
 <QueryClientProvider client={queryClient}>
-    <Toaster />
-    <Header/>
-    <slot />
+    <div class="bg-white dark:bg-darkBlueSM h-screen overflow-auto">
+        <Toaster />
+        <Header/>
+        <slot />
+    </div>
+    
     
 </QueryClientProvider>
 

@@ -3,8 +3,8 @@ module.exports = {
         nunitoSans: ["Nunito Sans", "sans-serif"],
     },
     colors: {
-        darkBlue: "hsl(209, 23%, 22%)",
-        darkBlueSM : "hsl(207, 26%, 17%)",
+        darkBlue: "hsl(209, 23%, 22%)", // #2B3844
+        darkBlueSM : "hsl(207, 26%, 17%)", //#202C36
         darkBlueMD: "hsl(200, 15%, 8%)",
         grayXS: "hsl(0,0%,77%)",
         darkGray: "hsl(0, 0%, 52%)",
