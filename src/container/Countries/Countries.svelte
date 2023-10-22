@@ -64,7 +64,7 @@
             </div>
     
             <select
-                class="dark:bg-darkBlue bg-white mt-10 md:mt-0 py-[1.13rem] pl-6 pr-[1.38rem] shadow-customSM w-[12.5rem] h-12 md:h-14 rounded-[0.3125rem] text-darkBlueMD dark:text-white border-0 outline-none "
+                class="dark:bg-darkBlue bg-white mt-10 md:mt-0 pl-6 pr-[1.38rem] shadow-customSM w-[12.5rem] h-12 md:h-14 rounded-[0.3125rem] text-darkBlueMD dark:text-white border-0 outline-none "
                 bind:value={selectedValue}
                 on:change={handleChange}
                 >
